@@ -6,22 +6,32 @@ import styled from "styled-components"
 import backgroundImage from "./imgs/background3.jpg"
 
 const Main = styled.div`
-
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   };
 `
 const Characters = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   align-items: left;
   position: absolute;
   width: 100%;
-  @media (min-width: 768px) {
-    align-items: center;
-   };
+  
 `
 const Background = styled.img`
-  width: 99vw;
+  width: 100vw;
   @media (max-width: 768px) {
     display: none;
+   };
+`
+const CharactersRemoved = styled.h3`
+  position: absolute;
+  color: #F5F5F5;
+  @media (max-width: 768px) {
+    color: black;
    };
 `
 
@@ -72,13 +82,13 @@ function App() {
         </Characters>
       );
     } else {
-      return <p>Todos personagens removidos!</p>;
+      return <CharactersRemoved>Todos personagens removidos!</CharactersRemoved>;
     }
   };
 
   return (
     <Main>
-      {characters ? showCharacters() : "Carregando"}
+      {characters ? showCharacters() : <CharactersRemoved>Carregando</CharactersRemoved>}
       <Background src={backgroundImage} />
     </Main>
   );
