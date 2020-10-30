@@ -3,10 +3,10 @@ import "./style.css";
 import Character from './components/Character';
 import axios from "axios";
 import styled from "styled-components"
-import backgroundImage from "./imgs/background.jpg"
+import backgroundImage from "./imgs/background3.jpg"
 
 const Main = styled.div`
-  /* background-image: url("https://i.pinimg.com/originals/f9/a9/ce/f9a9ced6d988b9e55af1ae9c23a6fdbf.jpg"); */
+
 `
 const Characters = styled.div`
   display: flex;
@@ -16,6 +16,12 @@ const Characters = styled.div`
   width: 100%;
   @media (min-width: 768px) {
     align-items: center;
+   };
+`
+const Background = styled.img`
+  width: 99vw;
+  @media (max-width: 768px) {
+    display: none;
    };
 `
 
@@ -73,7 +79,7 @@ function App() {
   return (
     <Main>
       {characters ? showCharacters() : "Carregando"}
-      {/* <Background src={backgroundImage} /> */}
+      <Background src={backgroundImage} />
     </Main>
   );
 }

@@ -8,8 +8,8 @@ const CharacterWrapper = styled.div`
   border: 2px solid black;
   border-radius: 19px;
   border-color: darkgrey;
-  margin: 12px;
-  width: 69%;
+  margin: 6px;
+  width: 59%;
   @media (max-width: 768px) {
     width: 90%;
   }
