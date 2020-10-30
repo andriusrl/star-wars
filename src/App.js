@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
+import "./style.css";
 import Character from './components/Character';
 import axios from "axios";
 
@@ -26,9 +26,44 @@ function App() {
     getCharacters();
   }, []);
 
+  const removeCharacter = name => {
+    setCharacters(
+      characters.filter(character => {
+        return character.name !== name;
+      })
+    );
+  };
+
+  const showCharacters = () => {
+    if (characters.length > 0) {
+      return (
+        <div>
+          <div className="main">
+            <div>
+              {characters.map(character => {
+                return (
+                  <Character
+                    key={character.name}
+                    name={character.name}
+                    eyeColor={character.eye_color}
+                    removeCharacter={name => {
+                      removeCharacter(name);
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return <p>Todos personagens removidos!</p>;
+    }
+  };
+
   return (
-    <div className="App">
-      <Character eyeColor="green" name="Luke" />
+    <div className="global">
+      {characters ? showCharacters() : "Carregando"}
     </div>
   );
 }

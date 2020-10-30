@@ -1,0 +1,51 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.global {
+  background-image: url("https://i.pinimg.com/originals/f9/a9/ce/f9a9ced6d988b9e55af1ae9c23a6fdbf.jpg");
+  height: 100vh;
+}
+
+button {
+  height: 39px;
+  border-radius: 13px;
+  border-color: darkgrey;
+  background-color: #364049;
+  margin-right: 9px;
+  color: #0A0A0A;
+}
+
+@media (min-width: 768px) {
+  button {
+    margin-left: 15px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+@media (min-width: 768px) {
+  .main {
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.character {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 19px;
+  border-color: darkgrey;
+  margin: 12px;
+}
+
+.name {
+  margin-left: 9px;
+}
